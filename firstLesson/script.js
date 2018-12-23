@@ -59,9 +59,22 @@ let mainList = {
 	},
 	chooseShopItem: function chooseShopItem() {
 		let items = prompt("Enter your items separated with comma!", "")
-		mainList.shopItems = items.split(",");
-		mainList.shopItems.push(prompt("Wait, something else?", ""));
+		if((typeof(ask)) === 'string' && (typeof(ask)) === null && ask != '' && ask.length < 50) {
+			mainList.shopItems = items.split(",");
+			mainList.shopItems.push(prompt("Wait, something else?", ""));
+		}
 		mainList.shopItems.sort();
+	},
+	itemsList: function itemsList() {
+		list = mainList.shopGoods.forEach(function(item, i) {
+			i + item;
+		});
+		alert("You can buy: " + list);
+	},
+	weHave: function weHave() {
+		for(let key in mainList.shopItems) {
+			console.log("Наш магазин включает в себя: " + mainList.shopItems[key]);
+		}
 	}
 }
 
